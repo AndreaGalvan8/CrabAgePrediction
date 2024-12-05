@@ -6,18 +6,15 @@ from sklearn.model_selection import train_test_split
 
 data = pd.read_csv("CrabAgePrediction.csv")  
 
-# Preprocess the data
 data['Age'] = data['Age'].apply(lambda x: 1 if x > 11 else 0)
 data['Sex'] = data['Sex'].map({'F': 0, 'M': 1, 'I': 2})
 
-# Drop unwanted columns
 data = data.drop(columns=["Shucked Weight", "Viscera Weight", "Shell Weight"])
 
 #  target
 X = data.drop(["Age"], axis=1)
 y = data["Age"]
 
-# test split train
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # KNN model
