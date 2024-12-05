@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 data = pd.read_csv("CrabAgePrediction.csv") 
@@ -20,8 +20,8 @@ y = data["Age"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Train RBF SVM
-rbf_svm = SVC(kernel='rbf')
-rbf_svm.fit(X_train, y_train)
+log_reg_model = LogisticRegression()
+log_reg_model.fit(X_train, y_train)
 
 # Streamlit App Interface
 st.title("Crab Age Prediction")
@@ -39,10 +39,10 @@ whole_weight = st.number_input("Whole Weight (g)", min_value=0.0, step=0.1)
 # predict the age
 if st.button("Predict Age"):
     user_input = np.array([[sex, length, diameter, height, whole_weight]])
-    prediction = rbf_svm.predict(user_input)
+    prediction = log_reg_model.predict.predict(user_input)
     result = "Older than 11 years" if prediction[0] == 1 else "11 years or younger"
     st.success(f"The predicted age of the crab is: {result}")
 
 # model's accuracy
-accuracy = rbf_svm.score(X_test, y_test)
-st.write(f"Model Accuracy(Using RBF_SVM): {accuracy * 100:.2f}%")
+accuracy = log_reg_model.score(X_test, y_test)
+st.write(f"Model Accuracy(Using Logistic Rgression): {accuracy * 100:.2f}%")
