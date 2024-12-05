@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 
-data = pd.read_csv("C:/Users/gandrea/Downloads/archive (1)/CrabAgePrediction.csv")  # Update this path if necessary
+data = pd.read_csv("CrabAgePrediction.csv")  # Update this path if necessary
 
 # Preprocess the data
 data['Age'] = data['Age'].apply(lambda x: 1 if x > 11 else 0)
