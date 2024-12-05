@@ -45,4 +45,4 @@ if st.button("Predict Age"):
 
 # model's accuracy
 accuracy = log_reg_model.score(X_test, y_test)
-st.write(f"Model Accuracy (Using Logistic Rgression): {accuracy * 100:.2f}%")
+st.write(f"Model Accuracy(Using Logistic Rgression): {accuracy * 100:.2f}%")
