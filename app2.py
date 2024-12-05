@@ -39,7 +39,7 @@ whole_weight = st.number_input("Whole Weight (g)", min_value=0.0, step=0.1)
 # predict the age
 if st.button("Predict Age"):
     user_input = np.array([[sex, length, diameter, height, whole_weight]])
-    prediction = log_reg_model.predict.predict(user_input)
+    prediction = log_reg_model.predict(user_input)
     result = "Older than 11 years" if prediction[0] == 1 else "11 years or younger"
     st.success(f"The predicted age of the crab is: {result}")
 
