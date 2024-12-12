@@ -102,7 +102,7 @@ print(f"Accuracy: {accuracy}")
 
 # Import necessary libraries
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
+from sklearn.metrics import accuracy_score
 
 # Step 1: Initialize the Logistic Regression model
 log_reg_model = LogisticRegression()
@@ -122,7 +122,7 @@ print(f"Accuracy: {accuracy}")
 # Code from ChatGPT
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
+from sklearn.metrics import accuracy_score
 
 # Step 1: Initialize the Random Forest model
 # n_estimators is the number of trees in the forest (can be tuned)
