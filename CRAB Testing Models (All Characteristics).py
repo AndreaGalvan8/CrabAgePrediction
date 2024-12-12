@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from xgboost import XGBRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
@@ -62,7 +61,7 @@ plt.title('Correlation Map')
 plt.show()
 
 # Code from ChatGPT
-
+from sklearn.neighbors import KNeighborsClassifier
 # Step 1: Initialize the KNN model, specify number of neighbors (k)
 # Tests conducted between 1-15. 8 yielded the best results.
 k = 8 # You can experiment with different values of k
@@ -82,7 +81,7 @@ print(f"Accuracy: {accuracy}")
 
 # Import necessary libraries
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score
 
 # Step 1: Initialize the RBF SVM model
 rbf_svm = SVC(kernel='rbf')
@@ -103,7 +102,7 @@ print(f"Accuracy: {accuracy}")
 
 # Import necessary libraries
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
+from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 
 # Step 1: Initialize the Logistic Regression model
 log_reg_model = LogisticRegression()
@@ -123,7 +122,7 @@ print(f"Accuracy: {accuracy}")
 # Code from ChatGPT
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
+from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 
 # Step 1: Initialize the Random Forest model
 # n_estimators is the number of trees in the forest (can be tuned)
