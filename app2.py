@@ -1,3 +1,4 @@
+#The following code uses Logistic Regression to predict the age of crabs, and create an interface(Steamlit) for the end-user to input the characteristics
 import streamlit as st
 import pandas as pd
 import numpy as np
